@@ -1,7 +1,11 @@
 Photogur::Application.routes.draw do
   
   get 'pictures' => 'pictures#index'
-  get 'pictures/:id' => 'pictures#show', as: "picture"
+  
+  post 'pictures' => 'pictures#create' #post - create using forms
+  get 'pictures/new' => 'pictures#new' 
+
+  get 'pictures/:id' => 'pictures#show', as: "picture"  # ":id" is like wildcard
 
 end
 
