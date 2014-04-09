@@ -4,17 +4,22 @@
   #singular vs plural, use common sense.
   
 Photogur::Application.routes.draw do  
-  root :to => "pictures#index"         #reroute root page to render index page
+  root :to => 'pictures#index'         #reroute root page to render index page
+  
   get 'pictures' => 'pictures#index'
   
   post 'pictures' => 'pictures#create' #post - create using forms
+  
   get 'pictures/new' => 'pictures#new' 
 
-  get 'pictures/:id' => 'pictures#show', as: "picture"  # ":id" is like wildcard
+  get 'pictures/:id' => 'pictures#show', as: 'picture'  # ":id" is like wildcard
   
   get 'pictures/:id/edit' => 'pictures#edit', as: 'edit_picture'
-  patch 'pictures/:id' => 'pictures#update'
   
+  patch 'pictures/:id' => 'pictures#update'
+
+  delete 'pictures/:id' => 'pictures#destroy', as: 'delete_picture'
+
 end
 
 
