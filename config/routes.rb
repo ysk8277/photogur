@@ -1,5 +1,9 @@
-Photogur::Application.routes.draw do
+Photogur::Application.routes.draw do  
   
+  #always start with the routes then 
+  #go to the controller to create actions accordingly.
+  #RCAV - routes > controller > actions > views
+   
   get 'pictures' => 'pictures#index'
   
   post 'pictures' => 'pictures#create' #post - create using forms
